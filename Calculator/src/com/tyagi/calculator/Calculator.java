@@ -10,7 +10,7 @@ import java.awt.event.*;
  * @author mr tyagi
  *
  */
-public class Calculator implements ActionListener {
+public class Calculator implements ActionListener, WindowListener {
 
 	/**
 	 * 
@@ -121,6 +121,7 @@ public class Calculator implements ActionListener {
         equalsbtn.addActionListener(this);
         deletebtn.addActionListener(this);
         clearbtn.addActionListener(this);
+        calculatorframe.addWindowListener(this);
 	}
 	
 	public void actionPerformed(ActionEvent e)
@@ -219,6 +220,29 @@ public class Calculator implements ActionListener {
             for(int i=0;i<s.length()-1;i++)
             inputtextfield.setText(inputtextfield.getText()+s.charAt(i));
         }        
+    }
+	
+	/*Window listeners*/
+	public void windowOpened(WindowEvent e) {
+    }
+
+    public void windowClosing(WindowEvent e) {
+       System.exit(0);     
+    }
+    
+    public void windowClosed(WindowEvent e) {
+    }
+
+    public void windowIconified(WindowEvent e) {
+    }
+
+    public void windowDeiconified(WindowEvent e) {
+    }
+
+    public void windowActivated(WindowEvent e) {
+    }
+
+    public void windowDeactivated(WindowEvent e) {
     }
 
 	/**
